@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="view_tree_encomienda">
+      <field name="name">view.tree.encuesta</field>
+      <field name="model">reg.encuesta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name=""/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="modulo__encuesta.action_view_encuesta">
+      <field name="name">Encuesta</field>
+      <field name="res_model">reg.encuesta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.server" id="modulo__encomienda.action_server">
+      <field name="name">Modulo_Encomienda server</field>
+      <field name="model_id" ref="model_modulo__encomienda_modulo__encomienda"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+    
+    <menuitem name="Encuesta" parent="" id="menu_main_encuesta"  action="modulo__encuesta.action_view_encuesta"/>
+
+
+  </data>
+</odoo>

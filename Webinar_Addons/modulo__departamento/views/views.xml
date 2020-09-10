@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="view_tree_departamento">
+      <field name="name">view.tree.departamento</field>
+      <field name="model">reg.departamento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name=""/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="modulo__departamento.action_view_departamento">
+      <field name="name">Departamento</field>
+      <field name="res_model">reg.departamento</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="Departamento" parent="" id="menu_departamento"  action="modulo__departamento.action_view_departamento"/>
+
+  </data>
+</odoo>
