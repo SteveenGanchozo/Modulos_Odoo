@@ -1,0 +1,20 @@
+<odoo>
+    <record id="model_access_satisfaccion" model="ir.model.access">
+        <field name="name">model.access.satisfaccion</field>
+        <field name="model_id" ref="mod_encuesta.model_reg_encuesta_satisfaccion"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <record id="model_access_actividades" model="ir.model.access">
+        <field name="name">model.access.actividades</field>
+        <field name="model_id" ref="mod_encuesta.model_reg_encuesta_actividades"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+</odoo>

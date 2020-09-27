@@ -1,0 +1,138 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="m_encuesta.list_1">
+      <field name="name">Servidor list</field>
+      <field name="model">reg.servidor_publicos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Nombres"/>
+          <field name="apellidos" string="Apellidos"/>
+          <field name="cedula" string="Cédula"/>
+          <field name="correo" string="Correo"/>
+          <field name="cargo" string="Cargo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="m_encuesta.action_window_servidor">
+      <field name="name">Lista de Servidores Públicos</field>
+      <field name="res_model">reg.servidor_publicos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="m_encuesta.list_2">
+      <field name="name">Encargado list</field>
+      <field name="model">reg.encargado_migraciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="usuario" string="Usuario"/>
+          <field name="contraseña" string="Contraseña"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="m_encuesta.action_window_encargado">
+      <field name="name">Encargados de la Migración</field>
+      <field name="res_model">reg.encargado_migraciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="m_servidor_publico.action_server">
+      <field name="name">mServidorPublico server</field>
+      <field name="model_id" ref="model_m_servidor_publico_m_servidor_publico"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="mServidorPublico" id="m_servidor_publico.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="m_servidor_publico.menu_1" parent="m_servidor_publico.menu_root"/>
+    <menuitem name="Menu 2" id="m_servidor_publico.menu_2" parent="m_servidor_publico.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="Servidor Público" id="m_encuesta.menu_1_list" parent="" action="m_encuesta.action_window_servidor"/>
+    <menuitem name="Encargado Migración" id="m_encuesta.menu_2_list" parent="" action="m_encuesta.action_window_encargado"/>
+  </data>
+</odoo>
+<!--<odoo>
+  <data>
+    explicit list view definition
+
+    <record model="ir.ui.view" id="m_encuesta.list_1">
+      <field name="name">mEncuesta 1 list</field>
+      <field name="model">reg.encuesta_satisfaccion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Título"/>
+          <field name="fecha" string="Apellidos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="m_encuesta.action_window_satisfaccion">
+      <field name="name">Encuesta de Satisfacción</field>
+      <field name="res_model">reg.encuesta_satisfaccion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="m_encuesta.list_2">
+      <field name="name">mEncuesta 2 list</field>
+      <field name="model">reg.encuesta_actividad</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="m_encuesta.action_window">
+      <field name="name">Encuesta</field>
+      <field name="res_model">reg.encuesta_actividad</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="m_encuesta.action_server">
+      <field name="name">mEncuesta server</field>
+      <field name="model_id" ref="model_m_encuesta_m_encuesta"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="mEncuesta" id="m_encuesta.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="m_encuesta.menu_1" parent="m_encuesta.menu_root"/>
+    <menuitem name="Menu 2" id="m_encuesta.menu_2" parent="m_encuesta.menu_root"/>
+-->
+    <!-- actions 
+
+    <menuitem name="Encuesta" id="m_encuesta.menu_1_list" parent="" action="m_encuesta.action_window"/>
+    <menuitem name="Encuesta" id="m_encuesta.menu_1_list" parent="" action="m_encuesta.action_window"/>
+  </data>
+</odoo> -->

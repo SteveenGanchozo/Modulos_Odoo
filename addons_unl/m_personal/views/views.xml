@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="m_personal.list_1">
+      <field name="name">Servidor list</field>
+      <field name="model">reg.servidor_publico</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Nombres"/>
+          <field name="apellidos" string="Apellidos"/>
+          <field name="cedula" string="Cédula"/>
+          <field name="correo" string="Correo"/>
+          <field name="departamento" string="Deparamento"/>
+          <field name="cargo" string="Cargo"/>
+        </tree>
+      </field>
+    </record>
+      
+    <record model="ir.ui.view" id="m_personal.from_1">
+      <field name="name">Servidor form</field>
+      <field name="model">reg.servidor_publico</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="group_top">
+              <group name="group_1" string="Datos del Servidor Público" col="4" colspan="2">
+                <field name="name" string="Nombres"/>
+                <field name="apellidos" string="Apellidos"/>
+                <field name="cedula" string="Cédula"/>
+                <field name="correo" string="Correo"/>
+                <field name="departamento" string="Deparamento"/>
+                <field name="cargo" string="Cargo"/>
+              </group>
+            </group>
+          </sheet>  
+        </form>
+      </field>
+    </record>  
+    <record model="ir.actions.act_window" id="m_personal.action_window_servidor">
+      <field name="name">Lista de Servidores Públicos</field>
+      <field name="res_model">reg.servidor_publico</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="m_personal.list_2">
+      <field name="name">Encargado list</field>
+      <field name="model">reg.encargado_migracion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="usuario" string="Usuario"/>
+          <field name="contraseña" string="Contraseña"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="m_personal.from_2">
+      <field name="name">Encargado form</field>
+      <field name="model">reg.encargado_migracion</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="group_top">
+              <group name="group_1" string="Datos del Encargado" col="4" colspan="2">
+                <field name="name" string="Nombres"/>
+                <field name="apellidos" string="Apellidos"/>
+                <field name="cedula" string="Cédula"/>
+                <field name="correo" string="Correo"/>
+                <field name="usuario" string="Usuario"/>
+                <field name="contraseña" string="Contraseña"/>
+              </group>
+            </group>
+          </sheet>  
+        </form>
+      </field>
+    </record> 
+    
+    <record model="ir.actions.act_window" id="m_personal.action_window_encargado">
+      <field name="name">Encargados de la Migración</field>
+      <field name="res_model">reg.encargado_migracion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Servidor Público" id="m_personal.menu_1_list" parent="" action="m_personal.action_window_servidor"/>
+    <menuitem name="Encargado Migración" id="m_personal.menu_2_list" parent="" action="m_personal.action_window_encargado"/>
+  </data>
+</odoo>

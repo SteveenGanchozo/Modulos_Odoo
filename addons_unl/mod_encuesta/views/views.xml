@@ -1,0 +1,73 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="mod_encuesta.list_1">
+      <field name="name">Encuesta Satisfaccion list</field>
+      <field name="model">reg.encuesta_satisfaccion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Título"/>
+          <field name="fecha" string="Fecha"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mod_encuesta.from_1">
+      <field name="name">Satisfaccion form</field>
+      <field name="model">reg.encuesta_satisfaccion</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="group_top">
+              <group name="group_1" string="Encuesta de Satisfacción" col="2" colspan="1">
+                <field name="name" string="Título"/>
+                <field name="fecha" string="Fecha"/>
+              </group>
+            </group>
+          </sheet>  
+        </form>
+      </field>
+    </record> 
+    <record model="ir.actions.act_window" id="mod_encuesta.action_window_satisfaccion">
+      <field name="name">Encuestas de Satisfacción</field>
+      <field name="res_model">reg.encuesta_satisfaccion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="mod_encuesta.list_2">
+      <field name="name">Encuesta Actividades list</field>
+      <field name="model">reg.encuesta_actividades</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Título"/>
+          <field name="fecha" string="Fecha"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="mod_encuesta.from_2">
+      <field name="name">Actividades form</field>
+      <field name="model">reg.encuesta_actividades</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="group_top">
+              <group name="group_1" string="Encuesta de Actividades" col="2" colspan="1">
+                <field name="name" string="Título"/>
+                <field name="fecha" string="Fecha"/>
+              </group>
+            </group>
+          </sheet>  
+        </form>
+      </field>
+    </record> 
+
+    <record model="ir.actions.act_window" id="mod_encuesta.action_window_actividades">
+      <field name="name">Encuestas de Actividades</field>
+      <field name="res_model">reg.encuesta_actividades</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Encuestas de Satisfacción" id="mod_encuesta.menu_1_list" parent="" action="mod_encuesta.action_window_satisfaccion"/>
+    <menuitem name="Encuestas de Actividades" id="mod_encuesta.menu_2_list" parent="" action="mod_encuesta.action_window_actividades"/>
+  </data>
+</odoo>

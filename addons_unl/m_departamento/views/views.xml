@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="m_departamento.list">
+      <field name="name">mDepartamento list</field>
+      <field name="model">m_departamento.m_departamento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Nombre del Depatmento"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="m_departamento.action_window">
+      <field name="name">Departamento</field>
+      <field name="res_model">m_departamento.m_departamento</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="m_departamento.action_server">
+      <field name="name">mDepartamento server</field>
+      <field name="model_id" ref="model_m_departamento_m_departamento"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+    <!-- Top menu item -->
+<!--
+    <menuitem name="mDepartamento" id="m_departamento.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="m_departamento.menu_1" parent="m_departamento.menu_root"/>
+    <menuitem name="Menu 2" id="m_departamento.menu_2" parent="m_departamento.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="Departamento" id="m_departamento.menu_1_list" parent="" action="m_departamento.action_window"/>
+  </data>
+</odoo>
